@@ -6,26 +6,37 @@ class MovieService {
 		this.baseUrl = baseUrl;
 	}
 
-  async byTitle({title}) {
-    console.log({title});
-		let results = 'Stuff';
+	async byTitle({ title, page = 1 }) {
 		const url = `${this.baseUrl}`;
 		try {
 			const response = await axios.get(url, {
 				params: {
-					t: title,
-          apiKey: this.apiKey
+					s: title,
+					type: 'movie',
+					apiKey: this.apiKey,
+					page,
 				},
 			});
-      // console.log({response});
+			return { Movies: [...response.data.Search], TotalResults: response.data.totalResults, SearchTerm: title };
+		} catch (error) {
+			console.log('Error:', error);
+		}
+	}
+
+	async detailsById({ id }) {
+		const url = `${this.baseUrl}`;
+		try {
+			const response = await axios.get(url, {
+				params: {
+					i: id,
+					apiKey: this.apiKey,
+				},
+			});
 			return response.data;
 		} catch (error) {
 			console.log('Error:', error);
 		}
-
-		return results;
 	}
-
 }
 
 module.exports = {

@@ -1,0 +1,8 @@
+.spinner {
+	/* stroke: rgb(112, 166, 173); */
+	fill: rgb(55, 120, 187);
+	position: relative;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

@@ -1,0 +1,50 @@
+.form-heading {
+	@apply block uppercase tracking-wider text-lightslategray-800 text-sm font-bold mb-2;
+}
+
+.form-field {
+	@apply mb-2;
+}
+
+.form-field-label {
+	@apply block uppercase tracking-wide text-lightslategray-800 text-xs font-bold pl-2 mb-2;
+}
+
+.form-field-select {
+	@apply block appearance-none w-full border border-lightslategray-600 py-3 px-4 pr-8 rounded leading-tight;
+}
+
+.form-field-text {
+	@apply block appearance-none w-full border text-lightslategray-700 py-3 px-4 pr-8 rounded leading-tight;
+}
+
+.form-field-textarea {
+	@apply block appearance-none w-full border text-lightslategray-700 py-3 px-4 pr-8 rounded leading-tight;
+	height: 150px;
+}
+
+.form-field-group {
+	@apply mb-2;
+}
+
+.form-field-error {
+	@apply py-2 pl-2 text-sm text-red-600;
+}
+
+/* Read-only display */
+.field-group {
+	@apply mb-3;
+}
+
+.field-label {
+	@apply text-xs text-lightslategray-800 tracking-wide uppercase font-bold;
+}
+
+/* Overrides to style datepicker like other inputs */
+.react-datepicker__input-container {
+	display: block;
+}
+
+.react-datepicker-wrapper {
+	width: 100%;
+}

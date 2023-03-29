@@ -2,6 +2,8 @@ const { gql } = require('apollo-server');
 
 const typeDefs = gql`
 	type Movie {
+		"ID as displayed with IMDB"
+		imdbID: String
 		"Title of movie"
 		Title: String
 		"Year movie was released"
@@ -32,9 +34,20 @@ const typeDefs = gql`
 		Poster: String
 	}
 
+	type PaginatedMovies {
+		"List of movies"
+		Movies: [Movie]
+		"Total number of results from search"
+		TotalResults: Int
+		"Search term"
+		SearchTerm: String
+	}
+
 	type Query {
 		"Fetch movie by title"
-		movieByTitle("Title of movie" title: String!): Movie
+		movieByTitle("Title of movie" title: String!, "Page of the response" page: Int): PaginatedMovies
+		"Fetch movie details by movie id"
+		movieDetailsById("Id of movie" id: ID!): Movie
 	}
 `;
 
