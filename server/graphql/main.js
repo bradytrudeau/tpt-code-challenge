@@ -19,7 +19,7 @@
 
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
-const { typeDefs } = require('./schema');
+const { typeDefs } = require('./types');
 const { resolvers } = require('./resolvers');
 const { dataSources } = require('./datasources');
 const path = require('path');
