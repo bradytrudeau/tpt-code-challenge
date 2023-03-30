@@ -4,7 +4,7 @@ import { Spinner } from '../helpers/Spinner';
 import { useGetMovieByTitle } from '../movies/hooks/get-movie-by-title-hook';
 import logo from '../images/tpt-logo-png-transparent.png';
 
-function Search({ setMovieList, setTotalResults, setPreviousSearchTerm }) {
+function Search({ setMovieList, setTotalResults, setPreviousSearchTerm, setIsInitialSearch }) {
 	const [searchValue, setSearchValue] = React.useState('');
 	const [loading, setLoading] = React.useState(false);
 
@@ -17,6 +17,7 @@ function Search({ setMovieList, setTotalResults, setPreviousSearchTerm }) {
 		setMovieList(response.Movies);
 		setTotalResults(response.TotalResults);
 		setPreviousSearchTerm(response.SearchTerm);
+		setIsInitialSearch(true);
 		setLoading(false);
 	};
 
@@ -44,7 +45,7 @@ function Search({ setMovieList, setTotalResults, setPreviousSearchTerm }) {
 							</div>
 							<div>
 								<button
-									className="border-black border-2 px-8 ml-2 rounded leading-tight h-10 bg-lightslategray-700 text-white hover:bg-blue-tpt"
+									className="border-black border-2 px-8 ml-2 rounded leading-tight h-10 bg-lightslategray-500 text-white hover:bg-blue-tpt"
 									onClick={onEnter}>
 									Search
 								</button>

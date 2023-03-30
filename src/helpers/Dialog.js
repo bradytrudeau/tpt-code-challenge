@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Overlay } from './Overlay';
 import { animated, useTransition } from 'react-spring';
+import { AiFillCloseSquare } from 'react-icons/ai';
+import posterNotAvailable from '../images/movie-poster-not-available.jpeg';
+import { Tooltip } from './Tooltip';
 
 function Dialog({ show = false, movie, onClickOverlay = (f) => f }) {
 	const transition = useTransition(show, {
@@ -16,15 +19,18 @@ function Dialog({ show = false, movie, onClickOverlay = (f) => f }) {
 		transition((styles) => {
 			return (
 				<>
+					{/* Overlay used to darken movie images in background while allowing user to click it to close dialog box */}
 					<Overlay className="bg-lightslategray-900 bg-opacity-50 z-50" onClick={onClickOverlay}>
 						<animated.div style={styles}>
 							<div className="modal">
 								<div className="modal-image">
-									<img src={movie.Poster} alt="poster" />
+									<img src={movie.Poster !== 'N/A' ? movie.Poster : posterNotAvailable} alt="poster" />
 								</div>
-								<div className="modal-text">
-									<h2>
-										<strong>{movie.Title}</strong>
+								<div className="modal-text min-w-0">
+									<h2 className="truncate">
+										<Tooltip content={movie.Title} placement="top">
+											<strong>{movie.Title}</strong>
+										</Tooltip>
 									</h2>
 									<p className="text-xs my-2">
 										{movie.Year} • {movie.Rated} • {movie.Runtime} • {movie.Genre}
@@ -38,6 +44,9 @@ function Dialog({ show = false, movie, onClickOverlay = (f) => f }) {
 										<strong>Awards: </strong>
 										{movie.Awards}
 									</p>
+								</div>
+								<div className="text-2xl h-fit hover:cursor-pointer hover:text-blue-tpt" onClick={onClickOverlay}>
+									<AiFillCloseSquare />
 								</div>
 							</div>
 						</animated.div>

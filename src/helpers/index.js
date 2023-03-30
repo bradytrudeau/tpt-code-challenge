@@ -4,3 +4,4 @@ export * from './Overlay';
 export * from './Notifier';
 export * from './Spinner';
 export * from './TextInput';
+export * from './Tooltip';

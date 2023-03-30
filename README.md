@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# TPT Fullstack Software Developer Code Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table Of Contents
 
-## Available Scripts
+- [About the Application](#about-the-application)
+- [Application Preview](#application-preview)
+- [Technology Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Using The Application](#using-the-application)
+- [Authors](#authors)
 
-In the project directory, you can run:
+## About The Application
 
-### `npm start`
+This application allows the user to search for movies in The Open Movies Database and view a variety of details about each movie.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Application Preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Demo Application]()
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This application is built with the following technologies:
 
-### `npm run build`
+- [Graphql](https://graphql.org/)
+- [Javascript](https://www.javascript.com/)
+- [Node](https://nodejs.org/en)
+- [React](https://react.dev/)
+- [HTML](https://www.w3schools.com/html/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before running this application locally, please make sure you have the following installed on your machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node
+- NPM
 
-### `npm run eject`
+To test this you can run the following commands:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `node -v`
+- `npm -v`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Clone the repository by running `git clone https://github.com/bradytrudeau/tpt-code-challenge.git`
+- Open the repository in your editor of choice and run `npm install` from the root directory
+- In the root directory, create an .env file that includes the following environment variables:
+  - SERVER_PORT
+  - BASE_URL
+  - API_KEY
+  - PORT
+  - REACT_APP_GQL_API_BASE_URL
+- `npm run server` from the root directory
+- `npm run client` from the root directory
+- Note: The `npm run client` command will automatically open up a new browser tab for you!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Using the Application
 
-## Learn More
+Upon render of the app, you will be able to type the title of a movie into the visible search bar. After doing so, click the "Search" button and you will be routed to a view that will display the movies that match your search. You can click through the pages to see all of the results that match your search or you are able to click on each individual movie component to display additional information about the movie. To enter a new movie title, click on the "Search Again" button located at the bottom of the page.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Brady Trudeau](bradytrudeau@gmail.com)
