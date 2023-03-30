@@ -1,22 +1,3 @@
-// const express = require('express');
-// const { ApolloServer } = require('apollo-server');
-// const { typeDefs } = require('./types');
-// const { resolvers } = require('./resolvers');
-// const { dataSources } = require('./datasources');
-// const app = express();
-
-// const server = new ApolloServer({
-// 	dataSources,
-// 	typeDefs,
-// 	resolvers,
-// });
-
-// server.applyMiddleware({ app });
-
-// app.listen({ port: process.env.PORT }).then(({ url }) => {
-// 	console.log(`🚀 Server ready at ${url}`);
-// });
-
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs } = require('./types');
