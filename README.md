@@ -16,7 +16,7 @@ This application allows the user to search for movies in The Open Movies Databas
 
 ## Application Preview
 
-[Demo Application]()
+[Demo Application](https://hidden-hamlet-87103.herokuapp.com/)
 
 ## Tech Stack
 
