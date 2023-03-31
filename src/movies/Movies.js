@@ -17,6 +17,7 @@ function Movies({
 	const searchByTitle = useGetMovieByTitle();
 	const [currentPage, setCurrentPage] = React.useState(1);
 	const [loading, setLoading] = React.useState(false);
+	const [error, setError] = React.useState(null);
 	// Number of results per page
 	const pageSize = 10;
 	// Calculate total number of pages
@@ -26,16 +27,25 @@ function Movies({
 	const movieAnimation = isInitialSearch ? `movieanimationslow` : `movieanimationfast`;
 	// Use existing endpoint to fetch results of same search term but at a different index in the results array
 	const onPageChange = async (value) => {
-		// Display spinner while search is being performed
-		setLoading(true);
-		const response = await searchByTitle(previousSearchTerm, value);
-		setCurrentPage(value);
-		setMovieList(response.Movies);
-		setTotalResults(response.TotalResults);
-		setPreviousSearchTerm(response.SearchTerm);
-		setIsInitialSearch(false);
-		setLoading(false);
+		try {
+			// Display spinner while search is being performed
+			setLoading(true);
+			const response = await searchByTitle(previousSearchTerm, value);
+			setCurrentPage(value);
+			setMovieList(response.Movies);
+			setTotalResults(response.TotalResults);
+			setPreviousSearchTerm(response.SearchTerm);
+			setIsInitialSearch(false);
+			setLoading(false);
+		} catch (error) {
+			setError(error);
+		}
 	};
+
+	if (error) {
+		return <div>{error}</div>;
+	}
+
 	return (
 		<>
 			{!loading ? (

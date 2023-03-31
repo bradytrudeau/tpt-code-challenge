@@ -19,7 +19,7 @@ class MovieService {
 			});
 			return { Movies: [...response.data.Search], TotalResults: response.data.totalResults, SearchTerm: title };
 		} catch (error) {
-			console.log('Error:', error);
+			console.log(`Error fetching movies by title using search term "${title}:`, error);
 		}
 	}
 
@@ -34,7 +34,7 @@ class MovieService {
 			});
 			return response.data;
 		} catch (error) {
-			console.log('Error:', error);
+			console.log(`Error fetching movie details for movie with id "${id}:`, error);
 		}
 	}
 }

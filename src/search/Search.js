@@ -7,23 +7,32 @@ import logo from '../images/tpt-logo-png-transparent.png';
 function Search({ setMovieList, setTotalResults, setPreviousSearchTerm, setIsInitialSearch }) {
 	const [searchValue, setSearchValue] = React.useState('');
 	const [loading, setLoading] = React.useState(false);
+	const [error, setError] = React.useState(null);
 
 	const searchByTitle = useGetMovieByTitle();
 
 	const onEnter = async () => {
-		setLoading(true);
-		const response = await searchByTitle(searchValue);
-		setSearchValue('');
-		setMovieList(response.Movies);
-		setTotalResults(response.TotalResults);
-		setPreviousSearchTerm(response.SearchTerm);
-		setIsInitialSearch(true);
-		setLoading(false);
+		try {
+			setLoading(true);
+			const response = await searchByTitle(searchValue);
+			setSearchValue('');
+			setMovieList(response.Movies);
+			setTotalResults(response.TotalResults);
+			setPreviousSearchTerm(response.SearchTerm);
+			setIsInitialSearch(true);
+			setLoading(false);
+		} catch (error) {
+			setError(error);
+		}
 	};
 
 	const onChange = (event) => {
 		setSearchValue(event.target.value);
 	};
+
+	if (error) {
+		return <div>{error}</div>;
+	}
 
 	return (
 		<>

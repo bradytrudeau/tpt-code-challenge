@@ -15,7 +15,6 @@ function Dialog({ show = false, movie, onClickOverlay = (f) => f }) {
 	});
 	// Check to see if the user is on a mobile device or not
 	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-	console.log({ isMobile });
 
 	return (
 		show &&

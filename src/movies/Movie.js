@@ -8,18 +8,28 @@ function Movie({ movie }) {
 	const { Dialog, hide, show } = useDialog();
 	const [loading, setLoading] = React.useState(false);
 	const [movieDetails, setMovieDetails] = React.useState(null);
+	const [error, setError] = React.useState(null);
 
 	const searchDetailsById = useGetMovieDetailsById();
 
 	// Fetch all additional movie properties by movie id
 	const fetchMovieDetails = async () => {
-		setLoading(true);
-		const response = await searchDetailsById(movie.imdbID);
-		// Show dialog box
-		show();
-		setLoading(false);
-		setMovieDetails(response);
+		try {
+			setLoading(true);
+			const response = await searchDetailsById(movie.imdbID);
+			// Show dialog box
+			show();
+			setLoading(false);
+			setMovieDetails(response);
+		} catch (error) {
+			setError(error);
+		}
 	};
+
+	if (error) {
+		return <div>{error}</div>;
+	}
+
 	return (
 		<>
 			{!loading ? (

@@ -1,9 +1,8 @@
-const {
-	MovieService
-} = require('./services');
+const { MovieService } = require('./services');
 
 function dataSources() {
-  const config = {apiKey: process.env.API_KEY, baseUrl: process.env.BASE_URL}
+	// API key and base url for OMDb
+	const config = { apiKey: process.env.API_KEY, baseUrl: process.env.BASE_URL };
 
 	return {
 		movieService: new MovieService(config),

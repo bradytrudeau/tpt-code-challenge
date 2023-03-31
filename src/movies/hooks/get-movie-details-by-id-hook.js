@@ -7,7 +7,6 @@ function useGetMovieDetailsById() {
 
 	const movieDetails = React.useCallback(
 		async (id) => {
-			console.log({ id });
 			const response = await execQuery({
 				query: GET_MOVIE_DETAILS_BY_ID,
 				variables: { id },
