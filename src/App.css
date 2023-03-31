@@ -12,6 +12,29 @@
 	--typewriterCharacters: 15;
 }
 
+/* Global Styles */
+h1 {
+	position: relative;
+	font-family: 'Source Code Pro', monospace;
+	position: relative;
+	width: max-content;
+	font-size: 2.2rem;
+}
+
+h2 {
+	font-family: 'Source Code Pro', monospace;
+	font-size: 2rem;
+}
+
+p {
+	font-family: 'Source Code Pro', monospace;
+}
+
+button {
+	font-family: 'Source Code Pro', monospace;
+}
+
+/* Modal Styles */
 .modal {
 	margin-top: 20%;
 	margin-left: 10%;
@@ -33,51 +56,46 @@
 	max-width: 16rem;
 }
 
-.modal-text-container {
-	flex: 2;
-	margin: 3rem;
-}
-
 .modal-text {
-	flex: 2;
 	padding: 3rem 1rem;
 }
+
+.mobile-modal {
+	margin-top: 20%;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: relative;
+	background-color: rgba(255, 255, 255, 1);
+	border-width: 2px;
+	border-color: black;
+	box-shadow: 0 2px 20px #e1e5ee;
+	border-radius: 0.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.mobile-modal-image img {
+	width: 16rem;
+	height: 20rem;
+	max-width: 16rem;
+}
+
+.mobile-modal-text {
+	padding: 1rem 1rem;
+}
+
+/* Movie Component Styles */
 
 .movies {
 	animation: fadeInLeft 2s ease forwards;
 	transform: translateX(-3rem);
 }
 
-.search {
-	animation: fadeInLeft 1s ease forwards;
-	transform: translateX(3rem);
-}
-
 .container {
 	display: grid;
 	place-items: center;
 	word-wrap: break-word;
-}
-
-h1 {
-	position: relative;
-	font-family: 'Source Code Pro', monospace;
-	position: relative;
-	width: max-content;
-	font-size: 2.2rem;
-}
-
-h2 {
-	font-family: 'Source Code Pro', monospace;
-	font-size: 2rem;
-}
-
-p {
-	font-family: 'Source Code Pro', monospace;
-}
-
-button {
-	font-family: 'Source Code Pro', monospace;
 }
 
 .animatedheader::before,
@@ -153,6 +171,15 @@ button {
 	height: 20rem;
 	width: 20rem;
 }
+
+/* Search Component Styles */
+
+.search {
+	animation: fadeInLeft 1s ease forwards;
+	transform: translateX(3rem);
+}
+
+/* Pagination Styles */
 
 .pagination {
 	justify-content: center;

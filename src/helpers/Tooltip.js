@@ -6,6 +6,7 @@ const getPoint = (el, tooltip, placement, space) => {
 	const point = { x: 0, y: 0 };
 	const elRect = el.getBoundingClientRect();
 
+	// Indicates where tooltip will display relative to element
 	switch (placement) {
 		case 'left':
 			point.x = elRect.left - (tooltip.offsetWidth + space);

@@ -26,6 +26,7 @@ function Movies({
 	const movieAnimation = isInitialSearch ? `movieanimationslow` : `movieanimationfast`;
 	// Use existing endpoint to fetch results of same search term but at a different index in the results array
 	const onPageChange = async (value) => {
+		// Display spinner while search is being performed
 		setLoading(true);
 		const response = await searchByTitle(previousSearchTerm, value);
 		setCurrentPage(value);

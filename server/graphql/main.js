@@ -20,7 +20,7 @@ async function startServer() {
 
 startServer();
 
-const PORT = process.env.PORT || 4000; // Use the Heroku-assigned port or default to 4000
+const PORT = process.env.PORT || 4000; // Use the port from the config file or default to 4000
 
 app.use(express.static(path.join(__dirname, '../../build')));
 
